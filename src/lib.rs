@@ -121,3 +121,16 @@ pub const SFC_TEST_IEEE_FLOAT_REPLACE: c_int = 0x6001;
 pub const SFC_SET_ADD_HEADER_PAD_CHUNK: c_int = 0x1051;
 pub const SFC_SET_ADD_DITHER_ON_WRITE: c_int = 0x1070;
 pub const SFC_SET_ADD_DITHER_ON_READ: c_int = 0x1071;
+
+pub const SF_STR_TITLE: c_int = 0x01;
+pub const SF_STR_COPYRIGHT: c_int = 0x02;
+pub const SF_STR_SOFTWARE: c_int = 0x03;
+pub const SF_STR_ARTIST: c_int = 0x04;
+pub const SF_STR_COMMENT: c_int = 0x05;
+pub const SF_STR_DATE: c_int = 0x06;
+pub const SF_STR_ALBUM: c_int = 0x07;
+pub const SF_STR_LICENSE: c_int = 0x08;
+pub const SF_STR_TRACKNUMBER: c_int = 0x09;
+pub const SF_STR_GENRE: c_int = 0x10;
+pub const SF_STR_FIRST: c_int = SF_STR_TITLE;
+pub const SF_STR_LAST: c_int = SF_STR_GENRE;
