@@ -250,3 +250,25 @@ pub const SF_LOOP_NONE: c_int = 800;
 pub const SF_LOOP_FORWARD: c_int = 801;
 pub const SF_LOOP_BACKWARD: c_int = 802;
 pub const SF_LOOP_ALTERNATING: c_int = 803;
+
+#[repr(C)]
+#[derive(Debug)]
+pub struct SF_INSTRUMENT_LOOP {
+    pub mode: c_int,
+    pub start: u32,
+    pub end: u32,
+    pub count: u32,
+}
+
+#[repr(C)]
+pub struct SF_INSTRUMENT {
+    gain: c_int,
+    basenote: i8,
+    detune: i8,
+    velocity_lo: i8,
+    velocity_hi: i8,
+    key_lo: i8,
+    key_hi: i8,
+    loop_count: c_int,
+    loops: [SF_INSTRUMENT_LOOP; 16],
+}
