@@ -1,0 +1,6 @@
+[package]
+name = "sndfile-sys"
+version = "0.1.0"
+authors = ["evpobr <evpobr@gmail.com>"]
+
+[dependencies]
