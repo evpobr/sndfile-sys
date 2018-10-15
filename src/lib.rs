@@ -228,3 +228,14 @@ pub struct SF_EMBED_FILE_INFO {
     pub offset: sf_count_t,
     pub length: sf_count_t,
 }
+
+#[repr(C)]
+pub struct SF_CUE_POINT {
+    pub indx: i32,
+    pub position: u32,
+    pub fcc_chunk: i32,
+    pub chunk_start: i32,
+    pub block_start: i32,
+    pub sample_offset: u32,
+    pub name: [c_char; 256],
+}
