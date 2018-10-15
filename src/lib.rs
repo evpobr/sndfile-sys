@@ -141,3 +141,6 @@ pub const SF_TRUE: c_int = 1;
 pub const SFM_READ: c_int = 0x10;
 pub const SFM_WRITE: c_int = 0x20;
 pub const SFM_RDWR: c_int = 0x30;
+
+pub const SF_AMBISONIC_NONE: c_int = 0x40;
+pub const SF_AMBISONIC_B_FORMAT: c_int = 0x41;
