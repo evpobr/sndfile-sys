@@ -1,6 +1,8 @@
+#![allow(non_snake_case)]
+
 extern crate libc;
 
-use libc::c_int;
+use libc::{c_int, c_void};
 
 pub const SF_FORMAT_WAV: c_int = 0x010000;
 pub const SF_FORMAT_AIFF: c_int = 0x020000;
@@ -179,3 +181,5 @@ pub const SF_CHANNEL_MAP_AMBISONIC_B_X: c_int = 24;
 pub const SF_CHANNEL_MAP_AMBISONIC_B_Y: c_int = 25;
 pub const SF_CHANNEL_MAP_AMBISONIC_B_Z: c_int = 26;
 pub const SF_CHANNEL_MAP_MAX: c_int = 27;
+
+pub type SNDFILE = c_void;
