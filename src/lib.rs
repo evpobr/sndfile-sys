@@ -134,3 +134,6 @@ pub const SF_STR_TRACKNUMBER: c_int = 0x09;
 pub const SF_STR_GENRE: c_int = 0x10;
 pub const SF_STR_FIRST: c_int = SF_STR_TITLE;
 pub const SF_STR_LAST: c_int = SF_STR_GENRE;
+
+pub const SF_FALSE: c_int = 0;
+pub const SF_TRUE: c_int = 1;
