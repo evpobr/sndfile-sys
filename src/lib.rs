@@ -221,3 +221,10 @@ pub struct SF_DITHER_INFO {
     pub level: f64,
     pub name: *const c_char,
 }
+
+#[repr(C)]
+#[derive(Debug)]
+pub struct SF_EMBED_FILE_INFO {
+    pub offset: sf_count_t,
+    pub length: sf_count_t,
+}
