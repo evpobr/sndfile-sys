@@ -239,3 +239,9 @@ pub struct SF_CUE_POINT {
     pub sample_offset: u32,
     pub name: [c_char; 256],
 }
+
+#[repr(C)]
+pub struct SF_CUES {
+    pub cue_count: u32,
+    pub cue_points: [SF_CUE_POINT; 100],
+}
