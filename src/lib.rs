@@ -2,7 +2,7 @@
 
 extern crate libc;
 
-use libc::{c_int, c_void};
+use libc::{c_char, c_int, c_void};
 use std::i64;
 
 pub const SF_FORMAT_WAV: c_int = 0x010000;
@@ -198,4 +198,12 @@ pub struct SF_INFO {
     pub format: c_int,
     pub sections: c_int,
     pub seekable: c_int,
+}
+
+#[repr(C)]
+#[derive(Debug)]
+pub struct SF_FORMAT_INFO {
+    pub format: c_int,
+    pub name: *const c_char,
+    pub extension: *const c_char,
 }
