@@ -1,4 +1,4 @@
-#![allow(non_snake_case)]
+#![allow(non_snake_case, non_camel_case_types)]
 
 extern crate libc;
 
@@ -183,3 +183,5 @@ pub const SF_CHANNEL_MAP_AMBISONIC_B_Z: c_int = 26;
 pub const SF_CHANNEL_MAP_MAX: c_int = 27;
 
 pub type SNDFILE = c_void;
+
+pub type sf_count_t = i64;
