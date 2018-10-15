@@ -245,3 +245,8 @@ pub struct SF_CUES {
     pub cue_count: u32,
     pub cue_points: [SF_CUE_POINT; 100],
 }
+
+pub const SF_LOOP_NONE: c_int = 800;
+pub const SF_LOOP_FORWARD: c_int = 801;
+pub const SF_LOOP_BACKWARD: c_int = 802;
+pub const SF_LOOP_ALTERNATING: c_int = 803;
