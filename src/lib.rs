@@ -144,3 +144,9 @@ pub const SFM_RDWR: c_int = 0x30;
 
 pub const SF_AMBISONIC_NONE: c_int = 0x40;
 pub const SF_AMBISONIC_B_FORMAT: c_int = 0x41;
+
+pub const SF_ERR_NO_ERROR: c_int = 0;
+pub const SF_ERR_UNRECOGNISED_FORMAT: c_int = 1;
+pub const SF_ERR_SYSTEM: c_int = 2;
+pub const SF_ERR_MALFORMED_FILE: c_int = 3;
+pub const SF_ERR_UNSUPPORTED_ENCODING: c_int = 4;
