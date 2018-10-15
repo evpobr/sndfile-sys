@@ -207,3 +207,9 @@ pub struct SF_FORMAT_INFO {
     pub name: *const c_char,
     pub extension: *const c_char,
 }
+
+pub const SFD_DEFAULT_LEVEL: c_int = 0;
+pub const SFD_CUSTOM_LEVEL: c_int = 0x40000000;
+pub const SFD_NO_DITHER: c_int = 500;
+pub const SFD_WHITE: c_int = 501;
+pub const SFD_TRIANGULAR_PDF: c_int = 502;
