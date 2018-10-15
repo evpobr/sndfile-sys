@@ -3,6 +3,7 @@
 extern crate libc;
 
 use libc::{c_int, c_void};
+use std::i64;
 
 pub const SF_FORMAT_WAV: c_int = 0x010000;
 pub const SF_FORMAT_AIFF: c_int = 0x020000;
@@ -185,3 +186,5 @@ pub const SF_CHANNEL_MAP_MAX: c_int = 27;
 pub type SNDFILE = c_void;
 
 pub type sf_count_t = i64;
+
+pub const SF_COUNT_MAX: i64 = i64::MAX;
