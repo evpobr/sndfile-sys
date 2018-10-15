@@ -137,3 +137,7 @@ pub const SF_STR_LAST: c_int = SF_STR_GENRE;
 
 pub const SF_FALSE: c_int = 0;
 pub const SF_TRUE: c_int = 1;
+
+pub const SFM_READ: c_int = 0x10;
+pub const SFM_WRITE: c_int = 0x20;
+pub const SFM_RDWR: c_int = 0x30;
