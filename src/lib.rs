@@ -188,3 +188,14 @@ pub type SNDFILE = c_void;
 pub type sf_count_t = i64;
 
 pub const SF_COUNT_MAX: i64 = i64::MAX;
+
+#[repr(C)]
+#[derive(Debug)]
+pub struct SF_INFO {
+    pub frames: sf_count_t,
+    pub samplerate: c_int,
+    pub channels: c_int,
+    pub format: c_int,
+    pub sections: c_int,
+    pub seekable: c_int,
+}
