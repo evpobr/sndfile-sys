@@ -305,3 +305,28 @@ pub struct SF_CART_TIMER {
     pub usage: [c_char; 4],
     pub value: i32,
 }
+
+#[repr(C)]
+pub struct SF_CART_INFO {
+    pub version: [c_char; 4],
+    pub title: [c_char; 64],
+    pub artist: [c_char; 64],
+    pub cut_id: [c_char; 64],
+    pub client_id: [c_char; 64],
+    pub category: [c_char; 64],
+    pub classification: [c_char; 64],
+    pub out_cue: [c_char; 64],
+    pub start_date: [c_char; 10],
+    pub start_time: [c_char; 8],
+    pub end_date: [c_char; 10],
+    pub end_time: [c_char; 8],
+    pub producer_app_id: [c_char; 64],
+    pub producer_app_version: [c_char; 64],
+    pub user_def: [c_char; 64],
+    pub level_reference: i32,
+    pub post_timers: [SF_CART_TIMER; 8],
+    pub reserved: [c_char; 276],
+    pub url: [c_char; 1024],
+    pub tag_text_size: u32,
+    pub tag_text: [c_char; 256],
+}
