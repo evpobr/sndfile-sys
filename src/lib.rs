@@ -330,3 +330,12 @@ pub struct SF_CART_INFO {
     pub tag_text_size: u32,
     pub tag_text: [c_char; 256],
 }
+
+pub type sf_vio_get_filelen = extern "C" fn(user_data: *mut c_void) -> sf_count_t;
+pub type sf_vio_seek =
+    extern "C" fn(offset: sf_count_t, whence: c_int, user_data: *mut c_void) -> sf_count_t;
+pub type sf_vio_read =
+    extern "C" fn(ptr: *mut u8, count: sf_count_t, user_data: *mut c_void) -> sf_count_t;
+pub type sf_vio_write =
+    extern "C" fn(ptr: *const u8, count: sf_count_t, user_data: *mut c_void) -> sf_count_t;
+pub type sf_vio_tell = extern "C" fn(user_data: *mut c_void) -> sf_count_t;
