@@ -339,3 +339,13 @@ pub type sf_vio_read =
 pub type sf_vio_write =
     extern "C" fn(ptr: *const u8, count: sf_count_t, user_data: *mut c_void) -> sf_count_t;
 pub type sf_vio_tell = extern "C" fn(user_data: *mut c_void) -> sf_count_t;
+
+#[repr(C)]
+#[derive(Debug)]
+pub struct SF_VIRTUAL_IO {
+    pub get_filelen: sf_vio_get_filelen,
+    pub seek: sf_vio_seek,
+    pub read: sf_vio_read,
+    pub write: sf_vio_write,
+    pub tell: sf_vio_tell,
+}
