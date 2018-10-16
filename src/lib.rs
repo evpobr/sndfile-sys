@@ -299,3 +299,9 @@ pub struct SF_BROADCAST_INFO {
     pub coding_history_size: u32,
     pub coding_history: [c_char; 256],
 }
+
+#[repr(C)]
+pub struct SF_CART_TIMER {
+    pub usage: [c_char; 4],
+    pub value: i32,
+}
