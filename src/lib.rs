@@ -262,13 +262,13 @@ pub struct SF_INSTRUMENT_LOOP {
 
 #[repr(C)]
 pub struct SF_INSTRUMENT {
-    gain: c_int,
-    basenote: i8,
-    detune: i8,
-    velocity_lo: i8,
-    velocity_hi: i8,
-    key_lo: i8,
-    key_hi: i8,
-    loop_count: c_int,
-    loops: [SF_INSTRUMENT_LOOP; 16],
+    pub gain: c_int,
+    pub basenote: i8,
+    pub detune: i8,
+    pub velocity_lo: i8,
+    pub velocity_hi: i8,
+    pub key_lo: i8,
+    pub key_hi: i8,
+    pub loop_count: c_int,
+    pub loops: [SF_INSTRUMENT_LOOP; 16],
 }
