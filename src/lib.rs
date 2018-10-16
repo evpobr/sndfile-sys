@@ -2,7 +2,7 @@
 
 extern crate libc;
 
-use libc::{c_char, c_int, c_void};
+use libc::{c_char, c_int, c_short, c_void};
 use std::i64;
 
 pub const SF_FORMAT_WAV: c_int = 0x010000;
@@ -271,4 +271,15 @@ pub struct SF_INSTRUMENT {
     pub key_hi: i8,
     pub loop_count: c_int,
     pub loops: [SF_INSTRUMENT_LOOP; 16],
+}
+
+#[repr(C)]
+pub struct SF_LOOP_INFO {
+    pub time_sig_num: c_short,
+    pub time_sig_den: c_short,
+    pub loop_mode: c_int,
+    pub num_beats: c_int,
+    pub bpm: f32,
+    pub root_key: c_int,
+    pub future: [c_int; 6],
 }
