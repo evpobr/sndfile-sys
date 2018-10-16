@@ -367,4 +367,9 @@ extern "C" {
     ) -> *mut SNDFILE;
     #[cfg(windows)]
     pub fn sf_wchar_open(wpath: *const u16, mode: c_int, sfinfo: *mut SF_INFO) -> *mut SNDFILE;
+    pub fn sf_error(sndfile: *mut SNDFILE) -> c_int;
+    pub fn sf_strerror(sndfile: *mut SNDFILE) -> *const c_char;
+    pub fn sf_error_number(errnum: c_int) -> *const c_char;
+    pub fn sf_perror(sndfile: *mut SNDFILE) -> c_int;
+    pub fn sf_error_str(sndfile: *mut SNDFILE, str_: *mut c_char, len: usize) -> c_int;
 }
