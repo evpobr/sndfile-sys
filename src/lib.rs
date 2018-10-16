@@ -283,3 +283,19 @@ pub struct SF_LOOP_INFO {
     pub root_key: c_int,
     pub future: [c_int; 6],
 }
+
+#[repr(C)]
+pub struct SF_BROADCAST_INFO {
+    pub description: [c_char; 256],
+    pub originator: [c_char; 32],
+    pub originator_reference: [c_char; 32],
+    pub origination_date: [c_char; 10],
+    pub origination_time: [c_char; 8],
+    pub time_reference_low: u32,
+    pub time_reference_high: u32,
+    pub version: c_short,
+    pub umid: [c_char; 64],
+    pub reserved: [c_char; 190],
+    pub coding_history_size: u32,
+    pub coding_history: [c_char; 256],
+}
