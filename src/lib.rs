@@ -349,3 +349,22 @@ pub struct SF_VIRTUAL_IO {
     pub write: sf_vio_write,
     pub tell: sf_vio_tell,
 }
+
+#[link(name = "sndfile")]
+extern "C" {
+    pub fn sf_open(path: *const c_char, mode: c_int, sfinfo: *mut SF_INFO) -> *mut SNDFILE;
+    pub fn sf_open_fd(
+        fd: c_int,
+        mode: c_int,
+        sfinfo: *mut SF_INFO,
+        close_desc: c_int,
+    ) -> *mut SNDFILE;
+    pub fn sf_open_virtual(
+        sfvirtual: *mut SF_VIRTUAL_IO,
+        mode: c_int,
+        sfinfo: *mut SF_INFO,
+        user_data: *mut c_void,
+    ) -> *mut SNDFILE;
+    #[cfg(windows)]
+    pub fn sf_wchar_open(wpath: *const u16, mode: c_int, sfinfo: *mut SF_INFO) -> *mut SNDFILE;
+}
