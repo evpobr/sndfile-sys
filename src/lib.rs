@@ -388,4 +388,5 @@ extern "C" {
     pub fn sf_get_string(sndfile: *mut SNDFILE, str_type: c_int) -> *const c_char;
     pub fn sf_version_string() -> *const c_char;
     pub fn sf_current_byterate(sndfile: *mut SNDFILE) -> c_int;
+    pub fn sf_read_raw(sndfile: *mut SNDFILE, ptr: *mut c_void, bytes: sf_count_t) -> sf_count_t;
 }
