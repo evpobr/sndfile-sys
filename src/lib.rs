@@ -384,4 +384,5 @@ extern "C" {
     ) -> c_int;
     pub fn sf_format_check(info: *const SF_INFO) -> c_int;
     pub fn sf_seek(sndfile: *mut SNDFILE, frames: sf_count_t, whence: c_int) -> sf_count_t;
+    pub fn sf_set_string(sndfile: *mut SNDFILE, str_type: c_int, str_: *const c_char) -> c_int;
 }
