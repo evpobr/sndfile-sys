@@ -362,6 +362,8 @@ pub struct SF_CHUNK_INFO {
     data: *mut c_void,
 }
 
+pub type SF_CHUNK_ITERATOR = c_void;
+
 #[link(name = "sndfile")]
 extern "C" {
     pub fn sf_open(path: *const c_char, mode: c_int, sfinfo: *mut SF_INFO) -> *mut SNDFILE;
