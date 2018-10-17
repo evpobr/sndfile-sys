@@ -378,4 +378,5 @@ extern "C" {
         data: *mut c_void,
         datasize: c_int,
     ) -> c_int;
+    pub fn sf_format_check(info: *const SF_INFO) -> c_int;
 }
