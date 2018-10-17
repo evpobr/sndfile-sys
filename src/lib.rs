@@ -465,4 +465,14 @@ extern "C" {
     ) -> sf_count_t;
     pub fn sf_close(sndfile: *mut SNDFILE) -> c_int;
     pub fn sf_write_sync(sndfile: *mut SNDFILE);
+    pub fn sf_set_chunk(sndfile: *mut SNDFILE, chunk_info: *const SF_CHUNK_INFO) -> c_int;
+    pub fn sf_get_chunk_iterator(
+        sndfile: *mut SNDFILE,
+        chunk_info: *const SF_CHUNK_INFO,
+    ) -> *mut SF_CHUNK_ITERATOR;
+    pub fn sf_next_chunk_iterator(iterator: *mut SF_CHUNK_ITERATOR) -> *mut SF_CHUNK_ITERATOR;
+    pub fn sf_get_chunk_size(it: *const SF_CHUNK_ITERATOR, chunk_info: *mut SF_CHUNK_INFO)
+        -> c_int;
+    pub fn sf_get_chunk_data(it: *const SF_CHUNK_ITERATOR, chunk_info: *mut SF_CHUNK_INFO)
+        -> c_int;
 }
