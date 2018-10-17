@@ -383,4 +383,5 @@ extern "C" {
         datasize: c_int,
     ) -> c_int;
     pub fn sf_format_check(info: *const SF_INFO) -> c_int;
+    pub fn sf_seek(sndfile: *mut SNDFILE, frames: sf_count_t, whence: c_int) -> sf_count_t;
 }
