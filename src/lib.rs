@@ -350,6 +350,10 @@ pub struct SF_VIRTUAL_IO {
     pub tell: sf_vio_tell,
 }
 
+pub const SF_SEEK_SET: c_int = 0;
+pub const SF_SEEK_CUR: c_int = 1;
+pub const SF_SEEK_END: c_int = 2;
+
 #[link(name = "sndfile")]
 extern "C" {
     pub fn sf_open(path: *const c_char, mode: c_int, sfinfo: *mut SF_INFO) -> *mut SNDFILE;
