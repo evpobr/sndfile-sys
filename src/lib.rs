@@ -2,7 +2,9 @@
 
 extern crate libc;
 
-use libc::{c_char, c_double, c_float, c_int, c_short, c_uint, c_void};
+use libc::{
+    c_char, c_double, c_float, c_int, c_short, c_uint, c_void, int32_t, size_t, uint32_t, wchar_t,
+};
 use std::i64;
 
 pub const SF_FORMAT_WAV: c_int = 0x010000;
@@ -218,7 +220,7 @@ pub const SFD_TRIANGULAR_PDF: c_int = 502;
 #[derive(Debug)]
 pub struct SF_DITHER_INFO {
     pub type_: c_int,
-    pub level: f64,
+    pub level: c_double,
     pub name: *const c_char,
 }
 
@@ -231,18 +233,18 @@ pub struct SF_EMBED_FILE_INFO {
 
 #[repr(C)]
 pub struct SF_CUE_POINT {
-    pub indx: i32,
-    pub position: u32,
-    pub fcc_chunk: i32,
-    pub chunk_start: i32,
-    pub block_start: i32,
-    pub sample_offset: u32,
+    pub indx: int32_t,
+    pub position: uint32_t,
+    pub fcc_chunk: int32_t,
+    pub chunk_start: int32_t,
+    pub block_start: int32_t,
+    pub sample_offset: uint32_t,
     pub name: [c_char; 256],
 }
 
 #[repr(C)]
 pub struct SF_CUES {
-    pub cue_count: u32,
+    pub cue_count: uint32_t,
     pub cue_points: [SF_CUE_POINT; 100],
 }
 
@@ -255,20 +257,20 @@ pub const SF_LOOP_ALTERNATING: c_int = 803;
 #[derive(Debug)]
 pub struct SF_INSTRUMENT_LOOP {
     pub mode: c_int,
-    pub start: u32,
-    pub end: u32,
-    pub count: u32,
+    pub start: uint32_t,
+    pub end: uint32_t,
+    pub count: uint32_t,
 }
 
 #[repr(C)]
 pub struct SF_INSTRUMENT {
     pub gain: c_int,
-    pub basenote: i8,
-    pub detune: i8,
-    pub velocity_lo: i8,
-    pub velocity_hi: i8,
-    pub key_lo: i8,
-    pub key_hi: i8,
+    pub basenote: c_char,
+    pub detune: c_char,
+    pub velocity_lo: c_char,
+    pub velocity_hi: c_char,
+    pub key_lo: c_char,
+    pub key_hi: c_char,
     pub loop_count: c_int,
     pub loops: [SF_INSTRUMENT_LOOP; 16],
 }
@@ -279,7 +281,7 @@ pub struct SF_LOOP_INFO {
     pub time_sig_den: c_short,
     pub loop_mode: c_int,
     pub num_beats: c_int,
-    pub bpm: f32,
+    pub bpm: c_float,
     pub root_key: c_int,
     pub future: [c_int; 6],
 }
@@ -291,19 +293,19 @@ pub struct SF_BROADCAST_INFO {
     pub originator_reference: [c_char; 32],
     pub origination_date: [c_char; 10],
     pub origination_time: [c_char; 8],
-    pub time_reference_low: u32,
-    pub time_reference_high: u32,
+    pub time_reference_low: uint32_t,
+    pub time_reference_high: uint32_t,
     pub version: c_short,
     pub umid: [c_char; 64],
     pub reserved: [c_char; 190],
-    pub coding_history_size: u32,
+    pub coding_history_size: uint32_t,
     pub coding_history: [c_char; 256],
 }
 
 #[repr(C)]
 pub struct SF_CART_TIMER {
     pub usage: [c_char; 4],
-    pub value: i32,
+    pub value: int32_t,
 }
 
 #[repr(C)]
@@ -323,11 +325,11 @@ pub struct SF_CART_INFO {
     pub producer_app_id: [c_char; 64],
     pub producer_app_version: [c_char; 64],
     pub user_def: [c_char; 64],
-    pub level_reference: i32,
+    pub level_reference: int32_t,
     pub post_timers: [SF_CART_TIMER; 8],
     pub reserved: [c_char; 276],
     pub url: [c_char; 1024],
-    pub tag_text_size: u32,
+    pub tag_text_size: int32_t,
     pub tag_text: [c_char; 256],
 }
 
@@ -335,9 +337,9 @@ pub type sf_vio_get_filelen = extern "C" fn(user_data: *mut c_void) -> sf_count_
 pub type sf_vio_seek =
     extern "C" fn(offset: sf_count_t, whence: c_int, user_data: *mut c_void) -> sf_count_t;
 pub type sf_vio_read =
-    extern "C" fn(ptr: *mut u8, count: sf_count_t, user_data: *mut c_void) -> sf_count_t;
+    extern "C" fn(ptr: *mut c_void, count: sf_count_t, user_data: *mut c_void) -> sf_count_t;
 pub type sf_vio_write =
-    extern "C" fn(ptr: *const u8, count: sf_count_t, user_data: *mut c_void) -> sf_count_t;
+    extern "C" fn(ptr: *const c_void, count: sf_count_t, user_data: *mut c_void) -> sf_count_t;
 pub type sf_vio_tell = extern "C" fn(user_data: *mut c_void) -> sf_count_t;
 
 #[repr(C)]
@@ -380,12 +382,12 @@ extern "C" {
         user_data: *mut c_void,
     ) -> *mut SNDFILE;
     #[cfg(windows)]
-    pub fn sf_wchar_open(wpath: *const u16, mode: c_int, sfinfo: *mut SF_INFO) -> *mut SNDFILE;
+    pub fn sf_wchar_open(wpath: *const wchar_t, mode: c_int, sfinfo: *mut SF_INFO) -> *mut SNDFILE;
     pub fn sf_error(sndfile: *mut SNDFILE) -> c_int;
     pub fn sf_strerror(sndfile: *mut SNDFILE) -> *const c_char;
     pub fn sf_error_number(errnum: c_int) -> *const c_char;
     pub fn sf_perror(sndfile: *mut SNDFILE) -> c_int;
-    pub fn sf_error_str(sndfile: *mut SNDFILE, str_: *mut c_char, len: usize) -> c_int;
+    pub fn sf_error_str(sndfile: *mut SNDFILE, str_: *mut c_char, len: size_t) -> c_int;
     pub fn sf_command(
         sndfile: *mut SNDFILE,
         command: c_int,
