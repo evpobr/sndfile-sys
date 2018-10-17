@@ -2,7 +2,7 @@
 
 extern crate libc;
 
-use libc::{c_char, c_int, c_short, c_void};
+use libc::{c_char, c_double, c_float, c_int, c_short, c_void};
 use std::i64;
 
 pub const SF_FORMAT_WAV: c_int = 0x010000;
@@ -391,4 +391,40 @@ extern "C" {
     pub fn sf_read_raw(sndfile: *mut SNDFILE, ptr: *mut c_void, bytes: sf_count_t) -> sf_count_t;
     pub fn sf_write_raw(sndfile: *mut SNDFILE, ptr: *const c_void, bytes: sf_count_t)
         -> sf_count_t;
+    pub fn sf_readf_short(
+        sndfile: *mut SNDFILE,
+        ptr: *mut c_short,
+        frames: sf_count_t,
+    ) -> sf_count_t;
+    pub fn sf_writef_short(
+        sndfile: *mut SNDFILE,
+        ptr: *const c_short,
+        frames: sf_count_t,
+    ) -> sf_count_t;
+    pub fn sf_readf_int(sndfile: *mut SNDFILE, ptr: *mut c_int, frames: sf_count_t) -> sf_count_t;
+    pub fn sf_writef_int(
+        sndfile: *mut SNDFILE,
+        ptr: *const c_int,
+        frames: sf_count_t,
+    ) -> sf_count_t;
+    pub fn sf_readf_float(
+        sndfile: *mut SNDFILE,
+        ptr: *mut c_float,
+        frames: sf_count_t,
+    ) -> sf_count_t;
+    pub fn sf_writef_float(
+        sndfile: *mut SNDFILE,
+        ptr: *const c_float,
+        frames: sf_count_t,
+    ) -> sf_count_t;
+    pub fn sf_readf_double(
+        sndfile: *mut SNDFILE,
+        ptr: *mut c_double,
+        frames: sf_count_t,
+    ) -> sf_count_t;
+    pub fn sf_writef_double(
+        sndfile: *mut SNDFILE,
+        ptr: *const c_double,
+        frames: sf_count_t,
+    ) -> sf_count_t;
 }
