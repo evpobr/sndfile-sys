@@ -372,4 +372,10 @@ extern "C" {
     pub fn sf_error_number(errnum: c_int) -> *const c_char;
     pub fn sf_perror(sndfile: *mut SNDFILE) -> c_int;
     pub fn sf_error_str(sndfile: *mut SNDFILE, str_: *mut c_char, len: usize) -> c_int;
+    pub fn sf_command(
+        sndfile: *mut SNDFILE,
+        command: c_int,
+        data: *mut c_void,
+        datasize: c_int,
+    ) -> c_int;
 }
