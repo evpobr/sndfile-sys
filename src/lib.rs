@@ -454,4 +454,5 @@ extern "C" {
         items: sf_count_t,
     ) -> sf_count_t;
     pub fn sf_close(sndfile: *mut SNDFILE) -> c_int;
+    pub fn sf_write_sync(sndfile: *mut SNDFILE);
 }
