@@ -2,7 +2,7 @@
 
 extern crate libc;
 
-use libc::{c_char, c_double, c_float, c_int, c_short, c_void};
+use libc::{c_char, c_double, c_float, c_int, c_short, c_uint, c_void};
 use std::i64;
 
 pub const SF_FORMAT_WAV: c_int = 0x010000;
@@ -353,6 +353,14 @@ pub struct SF_VIRTUAL_IO {
 pub const SF_SEEK_SET: c_int = 0;
 pub const SF_SEEK_CUR: c_int = 1;
 pub const SF_SEEK_END: c_int = 2;
+
+#[repr(C)]
+pub struct SF_CHUNK_INFO {
+    id: [c_char; 64],
+    id_size: c_uint,
+    datalen: c_uint,
+    data: *mut c_void,
+}
 
 #[link(name = "sndfile")]
 extern "C" {
