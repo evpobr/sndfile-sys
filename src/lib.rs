@@ -427,4 +427,30 @@ extern "C" {
         ptr: *const c_double,
         frames: sf_count_t,
     ) -> sf_count_t;
+    pub fn sf_read_short(sndfile: *mut SNDFILE, ptr: *mut c_short, items: sf_count_t)
+        -> sf_count_t;
+    pub fn sf_write_short(
+        sndfile: *mut SNDFILE,
+        ptr: *const c_short,
+        items: sf_count_t,
+    ) -> sf_count_t;
+    pub fn sf_read_int(sndfile: *mut SNDFILE, ptr: *mut c_int, items: sf_count_t) -> sf_count_t;
+    pub fn sf_write_int(sndfile: *mut SNDFILE, ptr: *const c_int, items: sf_count_t) -> sf_count_t;
+    pub fn sf_read_float(sndfile: *mut SNDFILE, ptr: *mut c_float, items: sf_count_t)
+        -> sf_count_t;
+    pub fn sf_write_float(
+        sndfile: *mut SNDFILE,
+        ptr: *const c_float,
+        items: sf_count_t,
+    ) -> sf_count_t;
+    pub fn sf_read_double(
+        sndfile: *mut SNDFILE,
+        ptr: *mut c_double,
+        items: sf_count_t,
+    ) -> sf_count_t;
+    pub fn sf_write_double(
+        sndfile: *mut SNDFILE,
+        ptr: *const c_double,
+        items: sf_count_t,
+    ) -> sf_count_t;
 }
