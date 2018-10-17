@@ -453,4 +453,5 @@ extern "C" {
         ptr: *const c_double,
         items: sf_count_t,
     ) -> sf_count_t;
+    pub fn sf_close(sndfile: *mut SNDFILE) -> c_int;
 }
