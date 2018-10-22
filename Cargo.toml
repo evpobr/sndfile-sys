@@ -6,6 +6,10 @@ description = "Rust FFI bindings to libsndfile."
 license = "MIT"
 repository = "https://github.com/evpobr/sndfile-sys"
 categories = ["external-ffi-bindings", "multimedia::audio", "multimedia::encoding"]
+links = "sndfile"
 
 [dependencies]
 libc = "0.2"
+
+[build-dependencies]
+pkg-config = "0.3.14"
