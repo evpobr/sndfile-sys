@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## Fixed
 
 - Build warning about reduntant linker flag
+- Build warning about unused import on non-Windows platforms
 
 ## [0.1.0] - 2018-10-17
 
