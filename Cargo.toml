@@ -7,6 +7,7 @@ license = "MIT"
 repository = "https://github.com/evpobr/sndfile-sys"
 categories = ["external-ffi-bindings", "multimedia::audio", "multimedia::encoding"]
 build = "build.rs"
+links = "sndfile"
 
 [dependencies]
 libc = "0.2"
