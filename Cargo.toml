@@ -11,3 +11,6 @@ links = "sndfile"
 
 [dependencies]
 libc = "0.2"
+
+[build-dependencies]
+vcpkg = "0.2.6"
