@@ -2,9 +2,9 @@
 
 extern crate libc;
 
-use libc::{c_char, c_double, c_float, c_int, c_short, c_uint, c_void, int32_t, size_t, uint32_t};
 #[cfg(windows)]
 use libc::wchar_t;
+use libc::{c_char, c_double, c_float, c_int, c_short, c_uint, c_void, int32_t, size_t, uint32_t};
 use std::i64;
 
 pub const SF_FORMAT_WAV: c_int = 0x010000;
