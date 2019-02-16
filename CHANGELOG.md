@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+### Added
+
+- Opus codec support:
+  - `SF_FORMAT_OPUS` constant
+  - `SFC_GET_ORIGINAL_SAMPLERATE` constant
+  - `SFC_SET_ORIGINAL_SAMPLERATE` constant
+
 ## [0.1.2] - 2018-11-11
 
 ### Added
