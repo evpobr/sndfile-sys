@@ -7,6 +7,9 @@ use libc::wchar_t;
 use libc::{c_char, c_double, c_float, c_int, c_short, c_uint, c_void, int32_t, size_t, uint32_t};
 use std::i64;
 
+#[cfg(test)]
+mod test;
+
 pub const SF_FORMAT_WAV: c_int = 0x010000;
 pub const SF_FORMAT_AIFF: c_int = 0x020000;
 pub const SF_FORMAT_AU: c_int = 0x030000;
@@ -369,6 +372,7 @@ pub struct SF_CHUNK_INFO {
 
 pub type SF_CHUNK_ITERATOR = c_void;
 
+#[link(name = "sndfile")]
 extern "C" {
     pub fn sf_open(path: *const c_char, mode: c_int, sfinfo: *mut SF_INFO) -> *mut SNDFILE;
     pub fn sf_open_fd(
