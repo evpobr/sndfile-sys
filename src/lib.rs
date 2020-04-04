@@ -4,7 +4,7 @@ extern crate libc;
 
 #[cfg(windows)]
 use libc::wchar_t;
-use libc::{c_char, c_double, c_float, c_int, c_short, c_uint, c_void, int32_t, size_t, uint32_t};
+use libc::{c_char, c_double, c_float, c_int, c_short, c_uint, c_void, size_t};
 use std::i64;
 
 #[cfg(test)]
@@ -239,18 +239,18 @@ pub struct SF_EMBED_FILE_INFO {
 
 #[repr(C)]
 pub struct SF_CUE_POINT {
-    pub indx: int32_t,
-    pub position: uint32_t,
-    pub fcc_chunk: int32_t,
-    pub chunk_start: int32_t,
-    pub block_start: int32_t,
-    pub sample_offset: uint32_t,
+    pub indx: i32,
+    pub position: u32,
+    pub fcc_chunk: i32,
+    pub chunk_start: i32,
+    pub block_start: i32,
+    pub sample_offset: u32,
     pub name: [c_char; 256],
 }
 
 #[repr(C)]
 pub struct SF_CUES {
-    pub cue_count: uint32_t,
+    pub cue_count: u32,
     pub cue_points: [SF_CUE_POINT; 100],
 }
 
@@ -263,9 +263,9 @@ pub const SF_LOOP_ALTERNATING: c_int = 803;
 #[derive(Debug)]
 pub struct SF_INSTRUMENT_LOOP {
     pub mode: c_int,
-    pub start: uint32_t,
-    pub end: uint32_t,
-    pub count: uint32_t,
+    pub start: u32,
+    pub end: u32,
+    pub count: u32,
 }
 
 #[repr(C)]
@@ -299,19 +299,19 @@ pub struct SF_BROADCAST_INFO {
     pub originator_reference: [c_char; 32],
     pub origination_date: [c_char; 10],
     pub origination_time: [c_char; 8],
-    pub time_reference_low: uint32_t,
-    pub time_reference_high: uint32_t,
+    pub time_reference_low: u32,
+    pub time_reference_high: u32,
     pub version: c_short,
     pub umid: [c_char; 64],
     pub reserved: [c_char; 190],
-    pub coding_history_size: uint32_t,
+    pub coding_history_size: u32,
     pub coding_history: [c_char; 256],
 }
 
 #[repr(C)]
 pub struct SF_CART_TIMER {
     pub usage: [c_char; 4],
-    pub value: int32_t,
+    pub value: i32,
 }
 
 #[repr(C)]
@@ -331,11 +331,11 @@ pub struct SF_CART_INFO {
     pub producer_app_id: [c_char; 64],
     pub producer_app_version: [c_char; 64],
     pub user_def: [c_char; 64],
-    pub level_reference: int32_t,
+    pub level_reference: i32,
     pub post_timers: [SF_CART_TIMER; 8],
     pub reserved: [c_char; 276],
     pub url: [c_char; 1024],
-    pub tag_text_size: int32_t,
+    pub tag_text_size: i32,
     pub tag_text: [c_char; 256],
 }
 
