@@ -23,7 +23,7 @@ jobs:
 
     - name: Install Windows dependencies
       if: startsWith(matrix.os,'windows')
-    - run: |
+      run: |
         vcpkg update
         vcpkg install libsndfile:windows-x64-static
 
