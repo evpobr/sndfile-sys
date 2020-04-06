@@ -15,6 +15,12 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y libsndfile1-dev
 
+    - name: Install macOS dependencies
+      if: startsWith(matrix.os,'macOS')
+      run: |
+        brew update
+        brew install libsndfile
+
     - uses: hecrj/setup-rust-action@v1
       with:
         rust-version: ${{ matrix.rust }}
