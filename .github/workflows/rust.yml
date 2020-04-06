@@ -9,6 +9,12 @@ jobs:
         rust: [stable, beta, nightly]
 
     steps:
+    - name: Install Lunux dependencies
+      if: startsWith(matrix.os,'ubuntu')
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libsndfile1-dev
+
     - uses: hecrj/setup-rust-action@v1
       with:
         rust-version: ${{ matrix.rust }}
