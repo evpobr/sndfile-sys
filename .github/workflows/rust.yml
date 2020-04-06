@@ -25,7 +25,8 @@ jobs:
       if: startsWith(matrix.os,'windows')
       uses: lukka/run-vcpkg@v1
     - run: |
-        $VCPKG_ROOT/vcpkg install libsndfile:windows-x64-static
+        vcpkg update
+        vcpkg install libsndfile:windows-x64-static
 
     - uses: hecrj/setup-rust-action@v1
       with:
