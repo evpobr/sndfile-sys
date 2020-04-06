@@ -21,7 +21,7 @@ jobs:
         brew update
         brew install libsndfile
 
-    - name: Install macOS dependencies
+    - name: Install Windows dependencies
       if: startsWith(matrix.os,'windows')
       run: |
         vcpkg install libsndfile:x64-windows-static
