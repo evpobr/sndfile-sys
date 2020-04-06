@@ -21,6 +21,11 @@ jobs:
         brew update
         brew install libsndfile
 
+    - name: Install macOS dependencies
+      if: startsWith(matrix.os,'windows')
+      run: |
+        vcpkg install libsndfile:x64-windows-static
+
     - uses: hecrj/setup-rust-action@v1
       with:
         rust-version: ${{ matrix.rust }}
