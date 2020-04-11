@@ -7,6 +7,10 @@ use libc::wchar_t;
 use libc::{c_char, c_double, c_float, c_int, c_short, c_uint, c_void, size_t};
 use std::i64;
 
+#[cfg(not(windows))]
+#[link(name = "sndfile")]
+extern "C" {}
+
 #[cfg(test)]
 mod test;
 
@@ -372,7 +376,6 @@ pub struct SF_CHUNK_INFO {
 
 pub type SF_CHUNK_ITERATOR = c_void;
 
-#[link(name = "sndfile")]
 extern "C" {
     pub fn sf_open(path: *const c_char, mode: c_int, sfinfo: *mut SF_INFO) -> *mut SNDFILE;
     pub fn sf_open_fd(
