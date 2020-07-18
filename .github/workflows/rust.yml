@@ -18,8 +18,7 @@ jobs:
     - name: Install macOS dependencies
       if: startsWith(matrix.os,'macOS')
       run: |
-        brew update
-        brew install libsndfile
+        brew upgrade libsndfile
 
     - name: Install Windows dependencies
       if: startsWith(matrix.os,'windows')
