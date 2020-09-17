@@ -14,3 +14,4 @@ libc = "0.2"
 
 [build-dependencies]
 vcpkg = "0.2.6"
+pkg-config = "0.3.18"

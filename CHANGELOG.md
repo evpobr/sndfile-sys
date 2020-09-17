@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - `SFC_SET_OGG_PAGE_LATENCY_MS` constant
 - `SFC_SET_OGG_PAGE_LATENCY` constant
+- `pkg-config` method to search native library in build script
 
 ### Fixed
 
