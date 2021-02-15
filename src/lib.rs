@@ -7,7 +7,6 @@ use libc::wchar_t;
 use libc::{c_char, c_double, c_float, c_int, c_short, c_uint, c_void, size_t};
 use std::i64;
 
-#[cfg(not(windows))]
 #[link(name = "sndfile")]
 extern "C" {}
 
