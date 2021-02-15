@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.2.2] - 2021-02-15
+
 ### Added
 
 - `SFC_SET_OGG_PAGE_LATENCY_MS` constant
@@ -56,7 +58,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - libsndfile API up to [v1.0.29pre1@81a71e0](https://github.com/erikd/libsndfile/commit/81a71e08c09b20b0255aa66e40fce293008b9525)
 - [Travis CI tests](https://travis-ci.org/evpobr/sndfile-sys)
 
-[Unreleased]: https://github.com/evpobr/sndfile-sys/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/evpobr/sndfile-sys/compare/v0.2.2...HEAD
+[0.2.2]: https://github.com/evpobr/sndfile-sys/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/evpobr/sndfile-sys/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/evpobr/sndfile-sys/compare/v0.1.2...v0.2.0
 [0.1.2]: https://github.com/evpobr/sndfile-sys/compare/v0.1.1...v0.1.2

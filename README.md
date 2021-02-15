@@ -23,3 +23,6 @@ Use can link to dynamic `libsndfile` (not recommended for `MSVC` toolchain):
 * Install dynamic `libsndfile` library with command: `vcpkg install libsndfile:x64-windows`
 * Delete `RUSTFLAGS` environment variable
 * Set `VCPKGRS_DYNAMIC` environment variable to `1`
+
+Starting from version v0.2.2 `sndfile-sys` can use [PkgConfig](git://anongit.freedesktop.org/pkg-config) to search for native
+`libsndfile` library (thanks to [pkg-config-rs](https://github.com/rust-lang/pkg-config-rs) crate):
