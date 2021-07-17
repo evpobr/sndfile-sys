@@ -7,7 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [0.3.0] - 2021-07-17
+## [0.3.1] - 2021-07-17
+
+### Fixed
+
+- Version not bumped in Cargo.toml.
+  Everything else is identical to v0.3.0.
+
+## [0.3.0] - 2021-07-17 [YANKED]
 
 ### Added
 
@@ -71,7 +78,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - libsndfile API up to [v1.0.29pre1@81a71e0](https://github.com/erikd/libsndfile/commit/81a71e08c09b20b0255aa66e40fce293008b9525)
 - [Travis CI tests](https://travis-ci.org/evpobr/sndfile-sys)
 
-[Unreleased]: https://github.com/evpobr/sndfile-sys/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/evpobr/sndfile-sys/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/evpobr/sndfile-sys/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/evpobr/sndfile-sys/compare/v0.2.2...v0.3.0
 [0.2.2]: https://github.com/evpobr/sndfile-sys/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/evpobr/sndfile-sys/compare/v0.2.0...v0.2.1

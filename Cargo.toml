@@ -1,6 +1,6 @@
 [package]
 name = "sndfile-sys"
-version = "0.2.2"
+version = "0.3.1"
 authors = ["evpobr <evpobr@gmail.com>"]
 description = "Rust FFI bindings to libsndfile."
 license = "MIT"
